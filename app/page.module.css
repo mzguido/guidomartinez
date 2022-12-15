@@ -37,9 +37,19 @@
   max-width: 500px;
 }
 
+.projects {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:30px
+}
+
 .contact{
   margin-top: 60px;
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 

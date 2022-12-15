@@ -27,7 +27,9 @@ export default function handler(
       label: 'BallStats',
       url: 'https://nba-stats-f6eaa.web.app/teams',
       github: 'https://github.com/mzguido/nba',
-      description: 'A basketball stats app',
+      description: `Progresive web app responsive para ver estadisticas de la NBA.
+       Cuenta con un buscador e informacion de jugadores, equipos y
+       partidos. Permite ingresar y añadir equipos a favoritos.`,
       stack: ['angular', 'ts', 'firebase', 'css', 'html', 'bootstrap'],
     },
     {
@@ -35,7 +37,11 @@ export default function handler(
       label: 'PomoNotes',
       url: 'https://pomodoronotes.web.app/',
       github: 'https://github.com/mzguido/PomodoroNotes',
-      description: 'A pomodoro timer with tasks and lists',
+      description: `PWA con contador pomodoro, tareas y listas.
+      Permite utilizar la tecnica pomodoro y asociarlo a una tarea. Las tareas pueden marcarse como
+      completadas o eliminarse y Los intervalos de trabajo y descansoson configurables.
+      Se puede ingresar con google y guardar las tareas en la nube.
+      Disponible para instalar en el escritorio o en el celular.`,
       stack: ['angular', 'ts', 'firebase', 'css', 'html', 'bulmaio'],
     },
     {
@@ -43,7 +49,9 @@ export default function handler(
       label: 'TodoApp',
       url: 'https://ensolvers-front.vercel.app/',
       github: 'https://github.com/mzguido/ensolvers-front',
-      description: 'A todo app made for a challenge',
+      description: `Aplicacion web de notas creada para un challenge.
+        Permite crear, editar, eliminar y archivar notas.
+        Permite asignar y filtrar notas por categoria.`,
       stack: [
         'react',
         'vite',
@@ -127,6 +135,10 @@ export default function handler(
     sequelize: {
       color: '#52b0e7',
       label: 'Sequelize',
+    },
+    vite: {
+      color: '#646cff',
+      label: 'Vite',
     },
   };
 

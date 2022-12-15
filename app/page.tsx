@@ -4,7 +4,6 @@ import styles from './page.module.css';
 import profilePic from '../public/profile.jpg';
 import SocialMedia from './components/SocialMedia';
 import { Info } from '../interfaces';
-import { createImportSpecifier } from 'typescript';
 import Project from './components/Project';
 
 async function getData(): Promise<Info> {
@@ -19,8 +18,6 @@ async function getData(): Promise<Info> {
 
 export default async function Home() {
   const { media, projects, technologies } = await getData();
-
-  console.log(technologies['next']);
 
   return (
     <div className={styles.container}>
@@ -50,9 +47,9 @@ export default async function Home() {
           />
         </div>
 
-        <div>
+        <div className={styles.projects}>
           {projects.map((project) => {
-            return <Project project={project} />;
+            return <Project project={project} technologies={technologies} />;
           })}
         </div>
 

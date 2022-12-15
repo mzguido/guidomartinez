@@ -1,0 +1,66 @@
+.project{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.col{
+    display:flex;
+    flex-direction:column;
+}
+
+.row{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.imgContainer {
+    position: relative;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 100px;
+    border: none;
+    width: 180px;
+    text-align: center;
+}
+
+
+.button:hover {
+    background-color: var(--accent);
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.description{
+    max-width: 400px;
+}
+
+.stack {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+}
+
