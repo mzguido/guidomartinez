@@ -3,21 +3,23 @@ import styles from './page.module.css';
 
 import profilePic from '../public/profile.jpg';
 import SocialMedia from './components/SocialMedia';
-import { Info } from '../interfaces';
+import { IInfo } from '../interfaces';
 import Project from './components/Project';
+import { info } from '../data';
 
-async function getData(): Promise<Info> {
-  const res = await fetch('http://localhost:3000/api/info');
+// async function getData(): Promise<Info> {
+//   const res = await fetch('http://localhost:3000/api/info');
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data ');
-  }
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data ');
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default async function Home() {
-  const { media, projects, technologies } = await getData();
+  // const { media, projects, technologies } = await getData();
+  const { media, projects, technologies } = info;
 
   return (
     <div className={styles.container}>

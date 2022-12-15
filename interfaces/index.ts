@@ -42,7 +42,7 @@
 //   label: string;
 // }
 
-export interface Info {
+export interface IInfo {
   media: IMedia[];
   projects: IProject[];
   technologies: { [key: string]: ITechnology };

@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { Info } from '../../interfaces';
+import { IInfo } from '../../interfaces';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Info>
+  res: NextApiResponse<IInfo>
 ) {
   const media = [
     {
