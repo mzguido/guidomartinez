@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Poppins', sans-serif;
+
+  --accent: #7d7d7d;
+  --accent-light: #adadad;
+  --accent-dark: #3f3f3f;
+  }
+
+body.pink {
+  --accent: #f91880;
+  --accent-light: #ff53a3;
+  --accent-dark: #971451;
+}
+
+body.blue {
+  --accent: #2f8cf8;
+  --accent-light: #75b4fd;
+  --accent-dark: #0a56ad;
 }
 
 a {
@@ -21,6 +39,27 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: #121212;
   }
 }
+
+button {
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500 ;
+  font-family: inherit;
+  border-radius: 100px;
+  border: none;
+}
+
+button:hover {
+background-color: var(--accent);
+color: white;
+transition: .5s;
+cursor: pointer;
+}
+
+
+

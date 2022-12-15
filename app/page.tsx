@@ -1,46 +1,70 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from 'next/image';
+import styles from './page.module.css';
 
-export default function Home() {
+import profilePic from '../public/profile.jpg';
+import SocialMedia from './components/SocialMedia';
+import { Info } from '../interfaces';
+import { createImportSpecifier } from 'typescript';
+import Project from './components/Project';
+
+async function getData(): Promise<Info> {
+  const res = await fetch('http://localhost:3000/api/info');
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data ');
+  }
+
+  return res.json();
+}
+
+export default async function Home() {
+  const { media, projects, technologies } = await getData();
+
+  console.log(technologies['next']);
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
+        <div className={styles.presentation}>
+          <div className={styles.about}>
+            <h1 className={styles.title}>Guido Martinez</h1>
+            <h1 className={styles.subtitle}>Full Stack developer</h1>
+            <p>
+              Estudiente de 5to año de Ingenieria en Sistemas de Informacion en
+              la UTN-FRC, con conocimientos en desarrollo web y mobile.
+            </p>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
+            <button>
+              <span>Descargar CV</span>
+            </button>
+          </div>
+          <Image
+            alt="Guido Martinez profile photo"
+            src={profilePic}
+            width={300}
+            height={300}
+            style={{
+              objectFit: 'cover',
+              borderRadius: '50%',
+            }}
+          />
+        </div>
 
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
+        <div>
+          {projects.map((project) => {
+            return <Project project={project} />;
+          })}
+        </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+        <div className={styles.contact}>
+          {media.map((social) => {
+            return <SocialMedia key={social.name} socialMedia={social} />;
+          })}
+          <span>Email: martinez.guido14@gmail.com</span>
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -51,7 +75,7 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
-  )
+  );
 }
