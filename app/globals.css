@@ -13,6 +13,7 @@ body {
   --bg: white;
   --bgLight: #f5f5f5;
   --bgDark: #d5d5d5;
+  --textLight: #494949;
 
   background: var(--bg);
   }
@@ -48,10 +49,11 @@ a {
     --bg:#121212;
     --bgDark: #000000;
     --bgLight: #303030;
+    --textLight: #c3c3c3;
   }
 }
 
-button {
+button, a {
   padding: 10px 20px;
   background: white;
   color: black;
@@ -60,14 +62,28 @@ button {
   font-family: inherit;
   border-radius: 100px;
   border: none;
+  cursor:pointer;
 }
 
-button:hover {
+button:hover, a:hover {
 background-color: var(--accent);
 color: white;
 transition: .5s;
 cursor: pointer;
 }
 
+
+.col{
+  display:flex;
+  flex-direction:column;
+}
+
+.row{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
 
 

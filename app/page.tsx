@@ -7,6 +7,7 @@ import { IInfo } from '../interfaces';
 import Project from './components/Project';
 import { info } from '../data';
 import Technology from './components/Technology';
+import Study from './components/Study';
 
 // async function getData(): Promise<Info> {
 //   const res = await fetch('http://localhost:3000/api/info');
@@ -20,11 +21,26 @@ import Technology from './components/Technology';
 
 export default async function Home() {
   // const { media, projects, technologies } = await getData();
-  const { media, projects, technologies } = info;
+  const { media, projects, technologies, studies } = info;
 
   return (
     <div className={styles.container}>
       <main className={styles.main}>
+        <div
+          style={{
+            position: 'absolute',
+            top: 10,
+            // right: 30,
+            display: 'flex',
+            gap: '10px',
+            alignSelf: 'flex-end',
+          }}
+        >
+          {media.map((social) => {
+            return <SocialMedia key={social.name} socialMedia={social} />;
+          })}
+        </div>
+
         <div className={styles.presentation}>
           <div className={styles.about}>
             <h1 className={styles.title}>Guido Martinez</h1>
@@ -34,9 +50,9 @@ export default async function Home() {
               la UTN-FRC, con conocimientos en desarrollo web y mobile.
             </p>
 
-            <button>
+            <a href="./cv/CV-Martinez-Guido.pdf" download>
               <span>Descargar CV</span>
-            </button>
+            </a>
           </div>
           <Image
             alt="Guido Martinez profile photo"
@@ -50,19 +66,39 @@ export default async function Home() {
           />
         </div>
 
-        <h1 className={styles.subtitle}>Stack</h1>
+        <h1 className={styles.subtitle}>
+          <span>{'<'}</span>
+          Proyectos
+          <span>{'/>'}</span>
+        </h1>
+        <div className={styles.projects}>
+          {projects.map((project) => {
+            return <Project project={project} technologies={technologies} />;
+          })}
+        </div>
+
+        <h1 className={styles.subtitle}>
+          <span>{'<'}</span>
+          Estudios
+          <span>{'/>'}</span>
+        </h1>
+        <div className={styles.studies}>
+          {studies.map((study) => {
+            return <Study study={study} />;
+          })}
+        </div>
+
+        <h1 className={styles.subtitle}>
+          <span>{'<'}</span>
+          Stack
+          <span>{'/>'}</span>
+        </h1>
         <div className={styles.stack}>
           {technologies.map((tech) => {
             return <Technology technology={tech} />;
           })}
         </div>
 
-        <h1 className={styles.subtitle}>Proyectos</h1>
-        <div className={styles.projects}>
-          {projects.map((project) => {
-            return <Project project={project} technologies={technologies} />;
-          })}
-        </div>
         <div className={styles.contact}>
           {media.map((social) => {
             return <SocialMedia key={social.name} socialMedia={social} />;

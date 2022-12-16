@@ -59,6 +59,23 @@ const projects = [
   },
 ];
 
+const studies = [
+  {
+    title: 'Ingenieria en Sistemas de Informacion',
+    place: 'Universidad Tecnologica Nacional - Facultad Regional Córdoba',
+    since: '2018',
+    until: 'Actualidad',
+    status: '5to año en curso',
+  },
+  {
+    title: 'Técnico en Informática Profesional y Personal',
+    place: 'Instituto Tecnico El Obraje',
+    since: '2010',
+    until: '2017',
+    status: 'Terminada',
+  },
+];
+
 const technologies = [
   {
     color: '#3178c6',
@@ -227,4 +244,4 @@ const technologies = [
 //   },
 // };
 
-export const info = { media, projects, technologies };
+export const info = { media, projects, technologies, studies };
