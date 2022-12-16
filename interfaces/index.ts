@@ -45,7 +45,7 @@
 export interface IInfo {
   media: IMedia[];
   projects: IProject[];
-  technologies: { [key: string]: ITechnology };
+  technologies: [ITechnology];
 }
 
 export interface IMedia {
@@ -65,4 +65,9 @@ export interface IProject {
 export interface ITechnology {
   color: string;
   label: string;
+  name: string;
 }
+// export interface ITechnology {
+//   color: string;
+//   label: string;
+// }

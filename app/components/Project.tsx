@@ -1,19 +1,17 @@
 import Image from 'next/image';
 import { IProject, ITechnology } from '../../interfaces';
 import styles from './Project.module.css';
-import Technology from './Technology';
+import StackItem from './StackItem';
 
 type Props = {
   project: IProject;
-  technologies: { [key: string]: ITechnology };
+  technologies: ITechnology[];
 };
 
 const Project = ({ project, technologies }: Props) => {
   const { label, description, name, stack, github, url } = project;
 
-  const techs = stack.map((tech) => technologies[tech]);
-
-  console.log(techs);
+  const techs = stack.map((tech) => technologies.find((t) => t.name === tech));
 
   return (
     <div className={styles.project}>
@@ -23,8 +21,9 @@ const Project = ({ project, technologies }: Props) => {
           <Image
             src={`/projects/${name}.png`}
             alt={`${name} project image`}
-            width={400}
-            height={280}
+            // width={400}
+            // height={280}
+            fill
             style={{
               objectFit: 'cover',
               borderRadius: '16px',
@@ -38,14 +37,15 @@ const Project = ({ project, technologies }: Props) => {
               Demo
             </a>
           </div>
+          <div className={styles.gradient}></div>
         </div>
         <div className={styles.col}>
           <span className={styles.description}>{description}</span>
           <div className={styles.stack}>
             {techs.map((technology) => (
-              <Technology
-                key={`project-stack-${technology.label}`}
-                technology={technology}
+              <StackItem
+                key={`project-stack-${technology?.label}`}
+                technology={technology!}
               />
             ))}
           </div>

@@ -6,6 +6,7 @@ import SocialMedia from './components/SocialMedia';
 import { IInfo } from '../interfaces';
 import Project from './components/Project';
 import { info } from '../data';
+import Technology from './components/Technology';
 
 // async function getData(): Promise<Info> {
 //   const res = await fetch('http://localhost:3000/api/info');
@@ -27,7 +28,7 @@ export default async function Home() {
         <div className={styles.presentation}>
           <div className={styles.about}>
             <h1 className={styles.title}>Guido Martinez</h1>
-            <h1 className={styles.subtitle}>Full Stack developer</h1>
+            <h1 className={styles.role}>Full Stack developer</h1>
             <p>
               Estudiente de 5to año de Ingenieria en Sistemas de Informacion en
               la UTN-FRC, con conocimientos en desarrollo web y mobile.
@@ -49,12 +50,19 @@ export default async function Home() {
           />
         </div>
 
+        <h1 className={styles.subtitle}>Stack</h1>
+        <div className={styles.stack}>
+          {technologies.map((tech) => {
+            return <Technology technology={tech} />;
+          })}
+        </div>
+
+        <h1 className={styles.subtitle}>Proyectos</h1>
         <div className={styles.projects}>
           {projects.map((project) => {
             return <Project project={project} technologies={technologies} />;
           })}
         </div>
-
         <div className={styles.contact}>
           {media.map((social) => {
             return <SocialMedia key={social.name} socialMedia={social} />;

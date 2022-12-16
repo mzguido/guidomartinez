@@ -4,6 +4,12 @@
   place-items: center;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 .main {
   min-height: 100vh;
   max-width: 1200px;
@@ -22,6 +28,12 @@
 }
 
 .subtitle {
+
+  margin-top: 80px;
+  color: var(--accent)
+}
+
+.role {
   color: var(--accent)
 }
 
@@ -37,18 +49,29 @@
   max-width: 500px;
 }
 
+.stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+  text-align: left;
+}
+
 .projects {
-  margin-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:30px
+  gap:30px;
+  text-align: left;
 }
 
 .contact{
   margin-top: 60px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
 }

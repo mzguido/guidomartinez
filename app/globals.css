@@ -10,6 +10,11 @@ body {
   --accent: #7d7d7d;
   --accent-light: #adadad;
   --accent-dark: #3f3f3f;
+  --bg: white;
+  --bgLight: #f5f5f5;
+  --bgDark: #d5d5d5;
+
+  background: var(--bg);
   }
 
 body.pink {
@@ -39,7 +44,10 @@ a {
   }
   body {
     color: white;
-    background: #121212;
+    /* background: #121212; */
+    --bg:#121212;
+    --bgDark: #000000;
+    --bgLight: #303030;
   }
 }
 
