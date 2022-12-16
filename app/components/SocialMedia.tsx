@@ -17,6 +17,7 @@ const SocialMedia = ({ socialMedia }: Props) => {
         backgroundColor: 'white',
         display: 'grid',
         placeItems: 'center',
+        padding: 0,
       }}
     >
       <Image
